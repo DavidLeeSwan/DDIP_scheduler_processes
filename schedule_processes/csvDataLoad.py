@@ -84,9 +84,9 @@ def csvDataLoad(company_file: str = None, branch_file: str = None, contact_file:
                                                                 sandbox=sandbox_load)
 
     # creates the new associations
-    ddip.api_calls.hubspot_api_misc.set_contact_branch_associations()
+    ddip.api_calls.hubspot_api_misc.set_contact_branch_associations(output_dir=output_str)
 
-    ddip.api_calls.hubspot_api_misc.set_branch_company_associations()
+    ddip.api_calls.hubspot_api_misc.set_branch_company_associations(output_dir=output_str)
 
 
 if __name__ == '__main__':
