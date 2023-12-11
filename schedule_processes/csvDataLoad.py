@@ -4,7 +4,6 @@ This Process takes a csv file of hubspot records uploads to the database then up
 import DDIP_Library as ddip
 from datetime import datetime
 import os
-import pandas as pd
 
 load_dir = 'initial_load/'
 sandbox = True
