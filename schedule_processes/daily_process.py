@@ -7,10 +7,17 @@ import DDIP_Library as ddip
 from datetime import datetime
 import os
 
+output_str = f'DDIP_daily_run_{datetime.today().strftime("%Y-%m-%d")}/'
+
+try:
+    os.makedirs(output_str, exist_ok=True)
+    print(f"Directory '{output_str}' created successfully or already exists.")
+except OSError as e:
+    print(f"Error creating directory '{output_str}': {e}")
+
 sandbox_get = False
 sandbox_load = True
 days_ago = 1
-output_str = 'daily_run/'
 
 
 def daily_process():
