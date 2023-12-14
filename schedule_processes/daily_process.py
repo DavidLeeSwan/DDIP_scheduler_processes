@@ -100,17 +100,17 @@ def daily_process():
 
     # ---------------- All loads ------------------
     # get updated table entries and uploads back to hubspot
-    companies = ddip.extract.export_companies(return_list=True)
+    companies = ddip.extract.export_companies(return_list=True, days_ago=1)
     ddip.api_calls.hubspot_api_inserting.update_hubspot_objects(object_type='companies',
                                                                 objects_to_update=companies,
                                                                 sandbox=sandbox_load)
 
-    branches = ddip.extract.export_branches(return_list=True)
+    branches = ddip.extract.export_branches(return_list=True, days_ago=1)
     ddip.api_calls.hubspot_api_inserting.update_hubspot_objects(object_type='branches',
                                                                 objects_to_update=branches,
                                                                 sandbox=sandbox_load)
 
-    contacts = ddip.extract.export_contacts(return_list=True)
+    contacts = ddip.extract.export_contacts(return_list=True, days_ago=1)
     ddip.api_calls.hubspot_api_inserting.update_hubspot_objects(object_type='contacts',
                                                                 objects_to_update=contacts,
                                                                 sandbox=sandbox_load)
